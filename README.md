@@ -15,9 +15,8 @@ Notebooks for reproducing the results of the EnrichMap [preprint]().
 
 3. Visium human breast cancer dataset
 - [Figure 4 & Supplementary Figure 4](notebooks/08_cancer_hallmarks.ipynb) and [here](notebooks/09_G0_arrest_in_breast_cancer.ipynb)
-- 
 
-4. Other platforms
+1. Other platforms
 Figure 5:
 - [Visium HD](notebooks/02_visiumhd_platform.ipynb)
 - [Xenium](notebooks/03_xenium_platform.ipynb)
