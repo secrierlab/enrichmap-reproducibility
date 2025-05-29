@@ -18,6 +18,10 @@ Notebooks for reproducing the results of the EnrichMap [preprint]().
 - 
 
 4. Other platforms
-- [Figure 5]()
+Figure 5:
+- [Visium HD](notebooks/02_visiumhd_platform.ipynb)
+- [Xenium](notebooks/03_xenium_platform.ipynb)
+- [MERFISH](notebooks/04_merfish_platform.ipynb)
+- [Imaging Mass Cytometry](notebooks/10_masscytometry_platform.ipynb)
 
 For more details of the EnrichMap package and learn how to use `EnrichMap` package please go to documentation at https://enrichmap.readthedocs.io/en/stable.
