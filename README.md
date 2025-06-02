@@ -1,6 +1,6 @@
 # EnrichMap: Spatially-aware gene set enrichment
 
-Notebooks for reproducing the results of the EnrichMap [preprint]().
+Notebooks for reproducing the results of the EnrichMap [preprint](https://www.biorxiv.org/content/10.1101/2025.05.30.656960v1).
 
 1. Simulated dataset
 - [Figure 1 & Supplementary Figure 1](notebooks/05_simulated_dataset.ipynb)
