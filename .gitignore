@@ -154,3 +154,12 @@ dmypy.json
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
+
+# Generated or downloaded when running the notebooks (see README)
+/figures/
+/results/
+/processed_data/
+/*.pkl
+/PathwayCommons12.All.hgnc.txt*
+/Visium_HD_Mouse_Brain/
+.DS_Store

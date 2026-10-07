@@ -1,0 +1,6 @@
+# Optional: R interoperability, only for notebook 07_normalisation_effect.ipynb.
+# R itself (>= 4.x) must be installed, together with the Bioconductor packages scran and BiocParallel:
+#   BiocManager::install(c("scran", "BiocParallel"))
+-r requirements.txt
+rpy2
+anndata2ri

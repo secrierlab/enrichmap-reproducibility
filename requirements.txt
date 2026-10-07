@@ -1,0 +1,28 @@
+# Python packages needed to run the notebooks (Python >= 3.10; tested with 3.12, see README).
+# Install with:  pip install -r requirements.txt
+enrichmap>=0.2.3
+numpy
+pandas
+scipy
+scikit-learn
+scikit-image
+scikit-gstat
+matplotlib
+seaborn
+tqdm
+anndata
+scanpy
+squidpy
+spatialdata
+spatialdata-io
+esda
+libpysal
+decoupler>=2       # notebooks use the v2 API (dc.mt, dc.pp, dc.op, dc.pl)
+gseapy
+pydeseq2
+pingouin
+jupyterlab
+nbconvert
+
+# Only needed for notebook 07_normalisation_effect.ipynb (scran normalisation through R).
+# Also requires R with the Bioconductor packages `scran` and `BiocParallel`:  pip install -r requirements-r.txt
