@@ -56,7 +56,7 @@ Start Jupyter from the repository root or from `notebooks/`. The notebooks locat
 
 Two parts of the analysis use R.
 
-- **GSDensity** (a comparator method; the `REV_GSD_base_*` notebooks and `scripts/F2b_compute.py --part gsd`) runs in its own conda environment, `gsdensity_env`, built with `bash scripts/build_gsdensity_env.sh`. If the archived CRAN packages fail to install, run `bash scripts/build_gsdensity_env_step2.sh` afterwards. The notebooks call `scripts/run_gsdensity.R` after `conda activate gsdensity_env`. To activate R some other way, set `GSDENSITY_ACTIVATE` to the shell prefix to use, for example `export GSDENSITY_ACTIVATE="source ~/miniforge3/etc/profile.d/conda.sh && conda activate gsdensity_env && "`.
+- **GSDensity** (a comparator method; the `REV_GSD_base_*` notebooks, `scripts/gsdensity_figure_caches.py` and `scripts/F2b_compute.py --part gsd`) runs in its own conda environment, `gsdensity_env`, built with `bash scripts/build_gsdensity_env.sh`. If the archived CRAN packages fail to install, run `bash scripts/build_gsdensity_env_step2.sh` afterwards. The notebooks call `scripts/run_gsdensity.R` after `conda activate gsdensity_env`. To activate R some other way, set `GSDENSITY_ACTIVATE` to the shell prefix to use, for example `export GSDENSITY_ACTIVATE="source ~/miniforge3/etc/profile.d/conda.sh && conda activate gsdensity_env && "`.
 - **scran** size factors (`ExtendedDataFig6`) need an R with the Bioconductor packages `scran` and `BiocParallel`. The notebook runs `Rscript` from your `PATH`; set `RSCRIPT` to use another one.
 
 ## Data
@@ -85,7 +85,12 @@ Figures are written to `figures/` and the values they plot to `source_data/`. In
    - `00_visiumhd_preprocessing` (after `00_gene_set`) writes `processed_data/visiumhd_pyramidal_layer_scores.h5ad`.
    - `00_hallmark_gene_sets` writes `hallmarks_genelists.pkl`.
    - `ExtendedDataFig3c_signatures` writes `data/F1/ED3c_gene_sets.json`.
-2. **GSDensity.** The `REV_GSD_base_*` notebooks write the GSDensity scores that the figure notebooks read from `data/gsd_cache/`. Run `REV_GSD_base_brain` after `ExtendedDataFig3c_signatures`.
+2. **GSDensity.**
+   - The `REV_GSD_base_*` notebooks write the GSDensity scores that the figure notebooks read from `data/gsd_cache/`. Run `REV_GSD_base_brain` after `ExtendedDataFig3c_signatures`.
+   - Then run `scripts/gsdensity_figure_caches.py` for the remaining GSDensity results: the random gene sets and clean-section run read by `ExtendedDataFig3_ExtendedDataFig4a-b` (`f1`), the contamination and noise runs of Fig. 2d,e (`fig2`, after `f1`), the noisy gene sets of Fig. 3 (`fig3`) and the runtime of Extended Data Fig. 5d (`ed5d`):
+     ```bash
+     python scripts/gsdensity_figure_caches.py f1 fig2 fig3 ed5d
+     ```
 3. **Simulations for Extended Data Fig. 1.** Run each part of `scripts/F2b_compute.py` over the 100 simulated slides; results go to `data/F2b/`. The parts are resumable and can run in parallel:
    ```bash
    python scripts/F2b_compute.py --part fast --seeds 0-99 --workers 2
@@ -98,6 +103,8 @@ Figures are written to `figures/` and the values they plot to `source_data/`. In
 4. **Figures.** `Fig4_ExtendedDataFig8_1_scores` before `Fig4_ExtendedDataFig8_2_panels`; all other figure notebooks in any order.
 
 The stored notebook outputs were produced on the authors' machine with the package versions noted in `requirements.txt`; re-running with newer versions can change numerical results slightly.
+
+**Visium HD Leiden clusters.** `00_visiumhd_preprocessing` reproduces the published Visium HD expression matrix exactly, but the Leiden clustering depends on the versions of scanpy, leidenalg and igraph, and a re-run can number or split the clusters differently. `Fig5a-c_ExtendedDataFig9` uses Leiden cluster `"7"` as the pyramidal layer reference and cluster `"6"` as the striatum reference (`leiden_proxy`, step 4), which define the regions behind Fig. 5b,c and Extended Data Fig. 9c. After a re-run, check the clusters against the published labels in the Source Data file of Fig. 5a (`Fig5a_visiumhd_leiden_clusters.csv`) and update `leiden_proxy` if they differ.
 
 ## License
 
