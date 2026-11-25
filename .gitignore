@@ -163,3 +163,7 @@ cython_debug/
 /PathwayCommons12.All.hgnc.txt*
 /Visium_HD_Mouse_Brain/
 .DS_Store
+/source_data/
+/data/
+/logs/
+/*.h5ad

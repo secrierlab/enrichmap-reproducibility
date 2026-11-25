@@ -1,39 +1,46 @@
 # EnrichMap: Spatially-aware gene set enrichment
 
-Notebooks for reproducing the results of the EnrichMap [preprint](https://www.biorxiv.org/content/10.1101/2025.05.30.656960v1). Figure numbers below follow the preprint. See [Setup](#setup), [Data](#data) and [Running the notebooks](#running-the-notebooks) before you start.
+Notebooks that reproduce the figures of the EnrichMap article. Each figure notebook is named after the panels it draws. See [Setup](#setup), [Data](#data) and [Running the notebooks](#running-the-notebooks) before you start.
 
-1. Simulated dataset
-- [Figure 1](notebooks/05_00_simulated_dataset.ipynb)
-- [Supplementary Figure 1a–d](notebooks/05_01_simulated_benchmarking.ipynb)
-- [Supplementary Figure 1e–f](notebooks/05_00_simulation_classification.ipynb)
+## Figures and notebooks
 
-2. Visium mouse brain dataset
-- [Figure 2](notebooks/01_visium_platform.ipynb)
-- [Supplementary Figure 2](notebooks/06_performance.ipynb)
-- [Figure 3](notebooks/18_visium_weights.ipynb)
-- [Supplementary Figure 3](notebooks/01_visium_platform.ipynb) and [here](notebooks/14_unit_tests.ipynb)
-- [Supplementary Figure 4](notebooks/17_benchmarking.ipynb)
-- [Supplementary Figures 5–6](notebooks/13_gene_set_sizes.ipynb) and [here](notebooks/01_visium_platform.ipynb)
-- [Supplementary Figure 7](notebooks/06_performance.ipynb)
-- [Supplementary Figure 8](notebooks/07_normalisation_effect.ipynb)
-- [Supplementary Figure 9](notebooks/12_visium_platform_n_neighbours.ipynb)
+| Figure | Panels | Notebook |
+|---|---|---|
+| Figure 1 | b–h | [`Fig1`](notebooks/Fig1.ipynb) |
+| Figure 2 | b–f | [`Fig2`](notebooks/Fig2.ipynb) |
+| Figure 3 | a–f | [`Fig3`](notebooks/Fig3.ipynb) |
+| Figure 4 | a–h | [`Fig4_ExtendedDataFig8_1_scores`](notebooks/Fig4_ExtendedDataFig8_1_scores.ipynb) (scores), then [`Fig4_ExtendedDataFig8_2_panels`](notebooks/Fig4_ExtendedDataFig8_2_panels.ipynb) |
+| Figure 5 | a–c | [`Fig5a-c_ExtendedDataFig9`](notebooks/Fig5a-c_ExtendedDataFig9.ipynb) |
+| Figure 5 | d–n | [`Fig5d-n`](notebooks/Fig5d-n.ipynb) |
+| Extended Data Fig. 1 | a–e | [`ExtendedDataFig1`](notebooks/ExtendedDataFig1.ipynb) |
+| Extended Data Fig. 2 | a–f | [`ExtendedDataFig2`](notebooks/ExtendedDataFig2.ipynb) |
+| Extended Data Fig. 3 | a–d | [`ExtendedDataFig3_ExtendedDataFig4a-b`](notebooks/ExtendedDataFig3_ExtendedDataFig4a-b.ipynb); gene sets of c from [`ExtendedDataFig3c_signatures`](notebooks/ExtendedDataFig3c_signatures.ipynb) |
+| Extended Data Fig. 4 | a, b | [`ExtendedDataFig3_ExtendedDataFig4a-b`](notebooks/ExtendedDataFig3_ExtendedDataFig4a-b.ipynb) |
+| Extended Data Fig. 4 | c–h | [`ExtendedDataFig4c-h_ExtendedDataFig5a-c`](notebooks/ExtendedDataFig4c-h_ExtendedDataFig5a-c.ipynb) |
+| Extended Data Fig. 5 | a–c | [`ExtendedDataFig4c-h_ExtendedDataFig5a-c`](notebooks/ExtendedDataFig4c-h_ExtendedDataFig5a-c.ipynb) |
+| Extended Data Fig. 5 | d | [`ExtendedDataFig5d`](notebooks/ExtendedDataFig5d.ipynb) |
+| Extended Data Fig. 5 | e, f | [`ExtendedDataFig5e-f`](notebooks/ExtendedDataFig5e-f.ipynb) |
+| Extended Data Fig. 6 | a–e | [`ExtendedDataFig6`](notebooks/ExtendedDataFig6.ipynb) |
+| Extended Data Fig. 7 | a–d | [`ExtendedDataFig7`](notebooks/ExtendedDataFig7.ipynb) |
+| Extended Data Fig. 8 | a, c–e | [`Fig4_ExtendedDataFig8_2_panels`](notebooks/Fig4_ExtendedDataFig8_2_panels.ipynb) |
+| Extended Data Fig. 8 | b | [`ExtendedDataFig8b`](notebooks/ExtendedDataFig8b.ipynb) |
+| Extended Data Fig. 9 | a–c | [`Fig5a-c_ExtendedDataFig9`](notebooks/Fig5a-c_ExtendedDataFig9.ipynb) |
 
-3. Visium human breast cancer dataset
-- [Figure 4](notebooks/08_cancer_hallmarks.ipynb), [here](notebooks/09_00_G0_arrest_in_breast_cancer.ipynb) and [here](notebooks/09_01_HRD_in_breast_cancer.ipynb)
-- [Supplementary Figure 10](notebooks/08_cancer_hallmarks.ipynb), [here](notebooks/09_00_G0_arrest_in_breast_cancer.ipynb) and [here](notebooks/09_01_HRD_in_breast_cancer.ipynb)
+Panels were reordered after the notebooks were run, so some output file names use the earlier letters:
 
-4. Other platforms
-Figure 5:
-- [Visium HD](notebooks/02_visiumhd_platform.ipynb)
-- [Xenium](notebooks/03_xenium_platform.ipynb)
-- [MERFISH](notebooks/04_merfish_platform.ipynb)
-- [Imaging Mass Cytometry](notebooks/10_masscytometry_platform.ipynb)
-
-[Supplementary Figure 11](notebooks/02_visiumhd_platform.ipynb), [here](notebooks/03_xenium_platform.ipynb), [here](notebooks/04_merfish_platform.ipynb) and [here](notebooks/10_masscytometry_platform.ipynb)
+| Output name in the notebook | Panel in the article |
+|---|---|
+| `ExtendedDataFig7a_knn_distance` | Extended Data Fig. 7b |
+| `ExtendedDataFig7b_variograms` | Extended Data Fig. 7c |
+| `ExtendedDataFig7c_maps` | Extended Data Fig. 7d |
+| `ExtendedDataFig7d_ring_recovery` | Extended Data Fig. 7a |
+| `ExtendedDataFig8b_bootstrap_rho` | Extended Data Fig. 8c |
+| `ExtendedDataFig8c_comparator_maps` | Extended Data Fig. 8d |
+| `ExtendedDataFig8d_comparators_vs_ground_truth` | Extended Data Fig. 8e |
 
 ## Setup
 
-Python ≥ 3.10 is required (tested with Python 3.11). Create an environment, install the dependencies and start Jupyter:
+Python ≥ 3.10 is required (the published figures were made with Python 3.11). Create an environment, install the dependencies and start Jupyter:
 
 ```bash
 git clone https://github.com/secrierlab/enrichmap-reproducibility.git
@@ -43,36 +50,57 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-`07_normalisation_effect.ipynb` additionally uses R (scran normalisation through `rpy2`). It needs R with the Bioconductor packages `scran` and `BiocParallel`, plus `pip install -r requirements-r.txt`. All other notebooks run without R.
+Start Jupyter from the repository root or from `notebooks/`. The notebooks locate the repository root themselves, so no paths need to be edited.
 
-Start Jupyter from the repository root or from `notebooks/`; the notebooks locate the repository root automatically, so no paths need to be edited.
+### R
+
+Two parts of the analysis use R.
+
+- **GSDensity** (a comparator method; the `REV_GSD_base_*` notebooks and `scripts/F2b_compute.py --part gsd`) runs in its own conda environment, `gsdensity_env`, built with `bash scripts/build_gsdensity_env.sh`. If the archived CRAN packages fail to install, run `bash scripts/build_gsdensity_env_step2.sh` afterwards. The notebooks call `scripts/run_gsdensity.R` after `conda activate gsdensity_env`. To activate R some other way, set `GSDENSITY_ACTIVATE` to the shell prefix to use, for example `export GSDENSITY_ACTIVATE="source ~/miniforge3/etc/profile.d/conda.sh && conda activate gsdensity_env && "`.
+- **scran** size factors (`ExtendedDataFig6`) need an R with the Bioconductor packages `scran` and `BiocParallel`. The notebook runs `Rscript` from your `PATH`; set `RSCRIPT` to use another one.
 
 ## Data
 
-| Data | Source | Used in |
-|---|---|---|
-| Visium human breast cancer (`adata_slides_0_3.h5ad`) | [Zenodo, 10.5281/zenodo.15438169](https://doi.org/10.5281/zenodo.15438169) (CC BY 4.0) | `09_00`, `09_01` |
-| Xenium (`xenium_aligned_ductal_invasive.h5ad`) | [Zenodo, 10.5281/zenodo.15438169](https://doi.org/10.5281/zenodo.15438169) | `03` |
-| Visium HD mouse brain (`visium_hd_mouse_brain.h5ad`) | [10X Genomics](https://www.10xgenomics.com/datasets/visium-hd-cytassist-gene-expression-libraries-of-mouse-brain-he-v4) | processed Visium HD data, see `02` |
-| Visium mouse brain | `squidpy.datasets.visium_hne_adata()`, downloaded automatically | `00`, `01`, `06`, `07`, `12`, `14`, `15`, `18` |
-| MERFISH | `squidpy.datasets.merfish()`, downloaded automatically | `04` |
-| Imaging mass cytometry | `squidpy.datasets.imc()`, downloaded automatically | `10` |
-| PathwayCommons v12, MSigDB (through OmniPath), HGNC gene symbols | public downloads made inside the notebooks | `08`, `13`, `11` |
+Data files are not part of this repository.
 
-Download the Zenodo files into a `processed_data/` folder in the repository root (the notebooks create this folder). `02_visiumhd_platform.ipynb` reads the Visium HD Space Ranger output from a `Visium_HD_Mouse_Brain/` folder in the repository root.
+| Data | Source | Where to put it | Used in |
+|---|---|---|---|
+| Visium human breast cancer (`adata_slides_0_3.h5ad`) | [Zenodo, 10.5281/zenodo.15438169](https://doi.org/10.5281/zenodo.15438169) (CC BY 4.0) | `processed_data/` | `Fig4_*`, `ExtendedDataFig5e-f`, `ExtendedDataFig8b`, `REV_GSD_base_breast` |
+| Xenium (`xenium_aligned_ductal_invasive.h5ad`) | [Zenodo, 10.5281/zenodo.15438169](https://doi.org/10.5281/zenodo.15438169) | repository root | `Fig5d-n`, `REV_GSD_base_xenium` |
+| Visium HD mouse brain (Space Ranger output) | [10X Genomics](https://www.10xgenomics.com/datasets/visium-hd-cytassist-gene-expression-libraries-of-mouse-brain-he-v4) | `Visium_HD_Mouse_Brain/` | `00_visiumhd_preprocessing` |
+| Visium mouse brain | `squidpy.datasets.visium_hne_adata()`, downloaded automatically | `data/anndata/` | `00_visium_brain_preprocessing` |
+| MERFISH, imaging mass cytometry | `squidpy.datasets.merfish()` and `imc()`, downloaded automatically | `data/anndata/` | `Fig5d-n`, `REV_GSD_base_merfish_imc` |
+| PathwayCommons v12 | downloaded inside `00_hallmark_gene_sets` | repository root | `00_hallmark_gene_sets` |
+| HRD and G0 arrest signatures | [`signature_all_phenotypes.csv`](signature_all_phenotypes.csv), in this repository | repository root | `Fig4_*`, `ExtendedDataFig5e-f`, `REV_GSD_base_breast` |
+
+Simulated data (Fig. 1 and Extended Data Fig. 1) are generated inside the notebooks and scripts with fixed seeds.
 
 ## Running the notebooks
 
-Figures are written to `figures/`, tables to `results/`, and intermediate files to `processed_data/` and the repository root. These are generated and git-ignored. Some notebooks use files written by others, so run them in this order:
+Figures are written to `figures/` and the values they plot to `source_data/`. Intermediate files go to `processed_data/`, `data/`, `logs/` and the repository root. All of these are generated and git-ignored. Run the notebooks in this order:
 
-1. `00_gene_set.ipynb` first. It writes `Pyramidal_layer_signatures.pkl` and `Striatum_signatures.pkl`, which `01`, `02`, `06`, `07`, `12`, `15`, `17` and `18` read.
-2. `08_cancer_hallmarks.ipynb` before `09_00_G0_arrest_in_breast_cancer.ipynb` (it writes `hallmarks_genelists.pkl`).
-3. `05_01_simulated_benchmarking.ipynb` before `05_00_simulation_classification.ipynb` (it writes `results/sim_classification.csv`).
+1. **Inputs.**
+   - `00_gene_set` writes `Pyramidal_layer_signatures.pkl` and `Striatum_signatures.pkl`, the mouse brain region signatures.
+   - `00_visium_brain_preprocessing` writes `processed_data/visium_brain_adata.h5ad`.
+   - `00_visiumhd_preprocessing` (after `00_gene_set`) writes `processed_data/visiumhd_pyramidal_layer_scores.h5ad`.
+   - `00_hallmark_gene_sets` writes `hallmarks_genelists.pkl`.
+   - `ExtendedDataFig3c_signatures` writes `data/F1/ED3c_gene_sets.json`.
+2. **GSDensity.** The `REV_GSD_base_*` notebooks write the GSDensity scores that the figure notebooks read from `data/gsd_cache/`. Run `REV_GSD_base_brain` after `ExtendedDataFig3c_signatures`.
+3. **Simulations for Extended Data Fig. 1.** Run each part of `scripts/F2b_compute.py` over the 100 simulated slides; results go to `data/F2b/`. The parts are resumable and can run in parallel:
+   ```bash
+   python scripts/F2b_compute.py --part fast --seeds 0-99 --workers 2
+   python scripts/F2b_compute.py --part ssgsea --seeds 0-99 --workers 2
+   python scripts/F2b_compute.py --part gsva --seeds 0-99 --workers 3
+   python scripts/F2b_compute.py --part gsva_noise --seeds 0-99 --workers 2   # after gsva
+   python scripts/F2b_compute.py --part gsd --seeds 0-99 --workers 4
+   python scripts/F2b_compute.py --part noiseclip --seeds 0-4 --workers 1     # after ssgsea and gsd
+   ```
+4. **Figures.** `Fig4_ExtendedDataFig8_1_scores` before `Fig4_ExtendedDataFig8_2_panels`; all other figure notebooks in any order.
 
-The stored notebook outputs were produced on the authors' machine; re-running with newer package versions can change numerical results slightly.
+The stored notebook outputs were produced on the authors' machine with the package versions noted in `requirements.txt`; re-running with newer versions can change numerical results slightly.
 
 ## License
 
 The code in this repository is released under the GNU General Public License v3.0 (GPL-3.0-only); see [LICENSE](LICENSE). The Zenodo datasets are released under CC BY 4.0.
 
-For more details of the EnrichMap package and learn how to use `EnrichMap` package please go to documentation at https://enrichmap.readthedocs.io/en/stable.
+For details of the EnrichMap package and how to use it, see the documentation at https://enrichmap.readthedocs.io/en/stable.

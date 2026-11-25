@@ -1,28 +1,31 @@
-# Python packages needed to run the notebooks (Python >= 3.10; tested with 3.12, see README).
+# Python packages needed to run the notebooks (Python >= 3.10; the published figures were made with Python 3.11).
 # Install with:  pip install -r requirements.txt
-enrichmap>=0.2.3
-numpy
-pandas
+# Versions in comments are those used for the published figures.
+enrichmap>=0.3.0   # 0.3.0
+numpy              # 2.2.6
+pandas             # 2.2.2
 scipy
 scikit-learn
 scikit-image
 scikit-gstat
+statsmodels
+pygam              # scripts/revision_utils.py (Extended Data Fig. 1 simulations)
+joblib
+mpmath
+h5py
 matplotlib
 seaborn
+adjustText
 tqdm
-anndata
-scanpy
-squidpy
+anndata            # 0.12.19
+scanpy             # 1.11.5
+squidpy            # 1.8.2
 spatialdata
-spatialdata-io
+spatialdata-io     # 00_visiumhd_preprocessing
 esda
 libpysal
-decoupler>=2       # notebooks use the v2 API (dc.mt, dc.pp, dc.op, dc.pl)
-gseapy
+decoupler>=2       # 2.2.0; notebooks use the v2 API (dc.mt, dc.pp, dc.op, dc.pl)
+gseapy             # 1.1.11
 pydeseq2
-pingouin
 jupyterlab
 nbconvert
-
-# Only needed for notebook 07_normalisation_effect.ipynb (scran normalisation through R).
-# Also requires R with the Bioconductor packages `scran` and `BiocParallel`:  pip install -r requirements-r.txt
